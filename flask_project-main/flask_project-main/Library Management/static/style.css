@@ -1,0 +1,15 @@
+#form{
+    display: none;
+    position: absolute;
+    margin-top: -22em;
+    width: max-content;
+    margin-left: 15em;
+}
+#form1{
+    padding-top: 5em;
+    padding-bottom: 5em;
+
+}
+#cross{
+    cursor: pointer;
+}

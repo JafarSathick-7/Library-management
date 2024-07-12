@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Users</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{url_for('static',filename='adminlte.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <link rel="stylesheet" href="/AdminLTE-3.0.4/dist/css/alt/adminusers.css">
+    <script src="{{url_for('static',filename='jquery-3.6.0.min.js')}}"></script>
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed ">
+<div class="wrapper">
+   <!-- Navbar -->
+   <nav class="main-header navbar navbar-expand navbar-white navbar-gray-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+<!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-white navbar-expand elevation-4 " id="slide">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link text-decoration-none"><i class="ion ion-android-desktop px-2"></i>
+      <span class="brand-text font-weight-light">Library Management</span>
+    </a>
+
+    <div class="sidebar">
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="{{url_for('dash')}}" class="nav-link">
+                <i class="ion ion-android-home px-2"></i>
+                <p>Dashboard </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{url_for('user')}}" class="nav-link active">
+              <i class="ion ion-android-person px-2"></i>
+              <p>
+                User
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+            <li class="nav-item has-treeview">
+                <a href="{{url_for('book')}}" class="nav-link ">
+                <i class="ion ion-ios-book px-2"></i>
+                <p>
+                    Books
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+                </a>
+          </li>
+            <li class="nav-item has-treeview">
+            <a href="{{url_for('issue')}}" class="nav-link">
+              <i class="ion ion-android-clipboard px-2"></i>
+              <p>
+                Issue Books
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="{{url_for('trans')}}" class="nav-link">
+              <i class="ion ion-cash px-2"></i>
+              <p>
+                Transaction
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+            <li class="nav-item has-treeview">
+            <a href="{{url_for('logout')}}" class="nav-link ">
+              <i class="ion ion-ios-undo px-2"></i>
+              <p>
+                Logout
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+
+  <div class="ab">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+
+
+        <!-- Main content -->
+        <section class="content">
+            <div id="form1" class="container-fluid ">
+            <section class="content">
+        <form action="{{url_for('updateuser')}}" method="POST">
+          <div class="row">
+            <div class="col-12">
+              <div class="card card-primary elevation-4" >
+                <div class="card-header">
+                  <h3 class="card-title">Edit User</h3>
+                </div>
+                <div class="card-body">
+                  <div class="form-group">
+                  <label for="inputId">User ID</label>
+                  <input type="text" id="inputId" name="uid" class="form-control" value="{{id.u_id}}" style="width: 28em;" >
+                  </div>
+                  <div class="form-group">
+                  <label for="inputName">User Name</label>
+                  <input type="text" id="inputName" name="uname" class="form-control" value="{{id.uname}}" style="width: 28em;" >
+                  </div>
+                  <div class="form-group">
+                    <label for="inputClientCompany">Email</label>
+                    <input type="email" id="inputClientCompany" name="uemail" class="form-control" value="{{id.email}}" style="width: 28em;">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputProjectLeader">Password</label>
+                  <input type="text" id="inputProjectLeader" name="password" class="form-control" value="{{id.password}}" style="width: 28em;">
+                  </div>
+                </div>
+              <!-- /.card-body -->
+              </div>
+            <!-- /.card -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <a href="/user" class="btn btn-primary text-light">Cancel</a>
+              <input type="submit" value="Confirm" name="add" class="btn btn-success ml-3 ">
+            </div>
+          </div>
+        </form>
+      </section>
+        </div>
+          <!-- Default box -->
+
+          <!-- /.card -->
+
+        </section>
+        <!----- edit --->
+
+        <!-- /.content -->
+
+
+      </div>
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- Control Sidebar -->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script>
+    function f() {
+        $('#form').show();
+    }
+    function e() {
+        $('#form1').show();
+    }
+    function d() {
+        $('#form').hide();
+    }
+    function a() {
+        $('#form1').hide();
+    }
+</script>
+</body>
+</html>

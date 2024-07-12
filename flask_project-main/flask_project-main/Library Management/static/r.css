@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+img{
+    height: 1.7em;
+    width: 2em;
+}
+button{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+}
+nav{
+    background-color: black;
+}
+#f{
+    font-size: 1.3em;
+}
+label{
+    color: white;
+    font-size: 1.2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#in,#pass{
+    border-radius: 1em;
+    border: 2px solid white;
+    text-align: center;
+    height: 2.5em;
+    width: 16em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    color: rgb(131, 143, 143);
+    background-color: black;
+}
+#pass:hover{
+    height: 2.5em;
+    width: 15em;
+}
+#in:hover{
+    height: 2.5em;
+    width: 15em;
+}
+#b{
+    padding-top: 1.5em;
+    padding-bottom: 14em;
+}
+.a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+@media screen and (min-width: 700px) {
+    #mid{
+        background-color: black;
+        margin-left: 10em;
+        margin-right: 10em;
+        width: 20em;
+        margin-top: 3em;
+        margin-bottom: 1em;
+        height: 43em;
+        border-radius: 2.5em;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.363)),url(/nav.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 2px solid rgb(60, 60, 60);
+        box-shadow: 1px 1px 20px 5px rgb(62, 62, 62);
+    }
+    
+}
+@media screen and (max-width: 700px) {
+    #mid{
+        background-color: black;
+        margin-left: 4em;
+        margin-right: 4em;
+        width: 20em;
+        margin-top: 3em;
+        margin-bottom: 1em;
+        height: 43em;
+        border-radius: 2.5em;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.363)),url(/nav.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 2px solid rgb(51, 51, 51);
+        box-shadow: 1px 1px 20px 5px rgb(122, 122, 122);
+    }
+    
+}
+@media screen and (min-width: 300px) {
+    #in,#pass{
+        border-radius: 1em;
+        border: 2px solid white;
+        text-align: center;
+        height: 2.5em;
+        width: 15em;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bolder;
+        font-size: 1em;
+        color: rgb(131, 136, 136);
+        background-color: black;
+        text-decoration: none;
+    }
+    
+}
+span{
+    color: white;
+    padding-left: 5px;
+    padding-right: .5em;
+}
+#lo{
+    text-decoration:none;
+}
+#btn{
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    padding-top: 6px;
+    padding-bottom: 9px;
+    padding-left: 3em;
+    padding-right: 3em;
+    border-radius: 2em;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+}
+a{
+    text-decoration: none;
+
+}
+#reg{
+    color: white;
+}
+#btn:hover{
+    text-shadow: 0 0 2px rgba(181, 181, 181, 0.724) ;
+}
+#ch{
+    padding-bottom: 1em;
+}
+#check{
+    width: 15px;
+    height: 15px;
+}
+#i,#i1{
+    color: white;
+    position: absolute;
+    margin-left: -1.8em;
+    margin-top: 0.7em;
+}

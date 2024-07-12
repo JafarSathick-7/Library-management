@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='l.css')}}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="{{url_for('static',filename='jquery-3.6.0.min.js')}}"></script>
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg align-middle text-center">
+        <span class="navbar-brand mb-0 px-3 h1 "><i class="ion ion-android-person px-3"></i><a href="#"></a> <span id="f">Login</span></span>
+    </nav>
+    <div class="con">
+        <div class="a">
+            <div id="mid">
+               <div class="c pt-4">
+                 <form action="{{url_for('ulogin')}}" method="POST">
+                    <div class="row">
+                        <div class="col-12 px-5">
+                            <label for="name" name="uname" id="name" >Username :</label>
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" placeholder="Enter your username" name="uname" id="in">
+                        </div>
+                        <div class="col-12 px-5">
+                            <label for="pass" name="upass" class="text-right">Password :</label>
+                         </div>
+                        <div class="col-12 text-center">
+                            <input type="password" placeholder="Enter your password" name="upass" id="pass">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="i" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                            </svg>
+                         </div>
+                         <div class="col-12 text-center">
+                             <input type="submit" value="login" name="login" id="btn">
+                         </div>
+                        <div class="col-12 text-center">
+                            <p style="color: red; font-weight: bolder;">
+                                {% with msg=get_flashed_messages() %}
+                                {% if msg %}
+                                {% for i in msg %}
+                                    {{i}}
+                                {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+                            </p>
+                         </div>
+                        <div class="col-12 text-center">
+                            <span>New user ?</span><a href="{{url_for('register')}}" id="r">Resigter</a>
+                         </div>
+                    </div>
+                 </form>
+               </div>
+            </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+         $('#i').click(function(){
+            if($('#pass').attr('type') == "password"){
+                $('#pass').attr("type","text")
+            }
+            else{
+                $('#pass').attr("type","password")
+            }
+            })
+    </script>
+</body>
+</html>>
